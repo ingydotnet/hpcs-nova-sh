@@ -1,0 +1,38 @@
+#!/usr/bin/env perl
+
+use strict;
+use YAML::XS;
+
+while (<>) {
+    next unless /^\+/;
+    my $offset = 2;
+    my $fields = [];
+    for (/\+(\-+)/g) {
+        my $length = length() - 2;
+        push @$fields, [$offset, $length];
+        $offset += $length + 3;
+    }
+    my $header = <>;
+    for (@$fields) {
+        push(@$_, get_field($header, $_));
+    }
+    my $table = [[map $_->[-1], @$fields]];
+    <>;
+    while (my $line = <>) {
+        last unless $line =~ /^\|/;
+        push @$table, {
+            map {
+                my $value = get_field($line, $_);
+                length($value) ? ($_->[-1], $value) : ();
+            } @$fields
+        };
+    }
+    print YAML::XS::Dump($table);
+}
+
+sub get_field {
+    my ($line, $offsets) = @_;
+    my $value = substr($line, $offsets->[0], $offsets->[1]);
+    $value =~ s!^\s*(.*?)\s*$!$1!;
+    return $value;
+}

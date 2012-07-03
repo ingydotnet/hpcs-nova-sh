@@ -1,0 +1,10 @@
+#!/bin/sh
+
+bin=`dirname $0`
+
+mkdir -p lib
+
+if [ ! -f $bin/ticktick.sh ]; then
+    git clone https://github.com/kristopolous/TickTick.git lib/TickTick
+    (cd bin; ln -s ../lib/TickTick/ticktick.sh)
+fi

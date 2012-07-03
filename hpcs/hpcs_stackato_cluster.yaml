@@ -1,0 +1,10 @@
+domain_name: hacktive.org
+hpcs:
+  user: $HPCS_USER
+  pass: $HPCS_PASS
+  zone: az-1.region-a.geo-1
+  node:
+  - size: 4GB
+    role: [ all, -dea ]
+  - size: 4GB
+    role: dea

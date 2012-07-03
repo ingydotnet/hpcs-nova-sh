@@ -1,0 +1,28 @@
+Overview
+--------
+
+This repository contains scripts for managing various server configurations on
+HP Cloud Services (HPCS). You'll need an HPCS account. You can get one here:
+https://www.hpcloud.com/
+
+Prerequisites
+-------------
+
+You'll need a Python command line utility called `nova`. You can install it on
+a Debian system like this:
+
+    sudo apt-get install python-nova
+
+You'll also need to have the following Perl modules installed:
+
+    - YAML::XS
+    - JSON::XS
+
+Setup
+-----
+
+Copy the `hpcs` directory to `~/.hpcs` like this:
+
+    cp -r ./hpcs ~/.hpcs
+
+and then edit the files in `~/.hpcs` appropriately.

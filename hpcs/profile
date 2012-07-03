@@ -1,0 +1,27 @@
+###
+# HPCS/Nova Configuration Profile.
+#
+# This profile contains environment variables that are needed to run the
+# 'hpcs_xxx' scripts. Set the appropriate values:
+###
+
+# These variables are needed by the 'nova' command:
+
+## Your hpcloud.com login id (in the form of an email address)
+# export NOVA_USERNAME=you@example.com
+
+## Your hpcloud.com password (the one you login to the hpcloud web console with)
+# export NOVA_PASSWORD=4Bcd3fgH1jkLmN0p
+
+## Your 'Tenant Name' value from https://console.hpcloud.com/account/api_keys
+# export NOVA_PROJECT_ID=$NOVA_USERNAME-tenant1
+
+## Your 'Identity' URL from https://console.hpcloud.com/account/api_keys
+# export NOVA_URL=https://region-a.geo-1.identity.hpcloudsvc.com:35357/v2.0/
+
+## One of the Compute Regions from https://console.hpcloud.com/account/api_keys
+# export NOVA_REGION_NAME=az-1.region-a.geo-1
+
+# Nova version 
+# export NOVA_VERSION=1.1
+

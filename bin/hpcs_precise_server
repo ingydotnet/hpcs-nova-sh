@@ -1,0 +1,5 @@
+#!/bin/sh -xe
+
+`dirname $0`/hpcs_script_initialize $0
+
+nova boot hacktive.org --flavor 100 --image 8419 --key_name $USER --security_groups default

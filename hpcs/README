@@ -1,0 +1,4 @@
+This directory contains configuration files for the various commands.
+
+You should make a copy of this directory called $HOME/.hpcs, and then edit the
+files appropriately, adding your personal information.
